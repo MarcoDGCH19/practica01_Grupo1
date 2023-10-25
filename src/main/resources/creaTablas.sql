@@ -25,5 +25,3 @@ DEFAULT CHARACTER SET = utf8mb4;
 INSERT INTO practica.arbol (id_arbol,nombre,dureza,tipo,ruta_imagen,extinto) VALUES 
 ('1','Roble','3','Árbol de hoja caduca', 'https://infinitanaturaleza.com/wp-content/uploads/2020/11/%C3%A1rbol-de-roble-3.jpg',   true), 
 ('2','Manzano','2','Caducifolio',  'https://th.bing.com/th/id/OIP.y-hd0fQM4TPgWOuALWVCkQHaEo?pid=ImgDet&rs=1',   true);
-
-
