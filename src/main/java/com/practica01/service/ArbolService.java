@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package com.practica01.service;
 
-/**
- *
- * @author luisa
- */
+import com.practica01.domain.Arbol;
+import java.util.List;
+
+
 public interface ArbolService {
-    
+ 
+    public List<Arbol> getArbols(boolean activo);
+
+    //Se obtiene una arbol segun el id pasado por parámetro
+    public Arbol getArbol(Arbol arbol);
+
+    //Se actualiza una arbol o se inserta un nueva.. (Si no hay id es un insert)
+    public void save(Arbol arbol);
+
+    //Se elimina una arbol segun el id pasado
+    public void delete(Arbol arbol);
 }
