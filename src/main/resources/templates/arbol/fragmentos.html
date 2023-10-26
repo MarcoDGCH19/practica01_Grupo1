@@ -6,7 +6,7 @@
         <title>Practica</title>
     </head>
     <body>
-        <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
+
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
@@ -23,7 +23,7 @@
             </div>
         </section>
 
-        <!-- 2 Fragmento para agregar arbol, es la ventana modal -->
+
         <section th:fragment="agregarArbol">
             <div id="agregarArbol" 
                  class="modal fade" 
@@ -70,7 +70,7 @@
             </div>
         </section>
 
-        <!-- 3 Sección principal para mostrar la informaccion de la entidad arbol -->
+
         <section th:fragment="listadoArbols" id="arbols">
             <div class="container">
                 <div class="row">
@@ -91,7 +91,7 @@
                                         <tr th:each="arbol, contador : ${arbols}">
                                             <td>[[${contador.count}]]</td>
                                             <td>[[${arbol.nombre}]]</td>
-                                            <td th:text="${arbol.extinto} ? 'Activa' : 'Inactiva'" />
+                                            <td th:text="${arbol.extinto} ? 'Si' : 'No'" />
                                             <td><a th:href="@{/arbol/eliminar/}+${arbol.idArbol}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> Eliminar</a>
@@ -102,7 +102,7 @@
                                 </table>
                             </div>
                             <div class="text-center p-2" th:if="${arbols == null or arbols.empty}">
-                                <span>[[#{lista.vacia}]]</span>
+                                <span>Lista Vacia</span>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
             </div>
         </section>
 
-        <!-- 4 Fragmento que se utiliza en la página modifca.html -->
+
         <section th:fragment="editarArbol">
             <div class="row">
                 <div class="col-md-2"></div>
@@ -168,7 +168,7 @@
                                                            th:field="*{extinto}">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="imagen">[[#{arbol.rutaImagen}]]</label>
+                                                    <label for="imagen">Imagen</label>
                                                     <input class="form-control" type="file" name="imagenFile"
                                                            onchange="readURL(this);" />
                                                     <img id="blah" th:src="@{${arbol.rutaImagen}}" alt="your image" height="200"/>
@@ -183,7 +183,7 @@
             </div>
         </section>
 
-        <!-- 5 Fragmento que se utiliza en el fragmento anterior -->
+
         <section th:fragment="botonesEditar">
             <div class="container py-4 mb-4 bg-light">
                 <div class="row">
